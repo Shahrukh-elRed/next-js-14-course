@@ -2,7 +2,7 @@
 import { serverSideFunction } from "@/utils/server-utils";
 
 const ClientRoutePage = () => {
-    console.log("server route rendered");
+    console.log("client route rendered");
     const result = serverSideFunction();
 
     return (
