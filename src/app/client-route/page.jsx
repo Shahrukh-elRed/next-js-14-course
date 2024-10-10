@@ -6,9 +6,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 import "./client-route.css";
 import { useTheme } from "@/components/theme-provider";
+import { clientSideFunction } from "@/utils/client-utils";
 
 export default function ClientRoutePage() {
     const theme = useTheme();
+    const result = clientSideFunction();
     const settings = {
         dots: true,
     }
@@ -16,7 +18,7 @@ export default function ClientRoutePage() {
     return (
         <>
             <h1 style={{ color: theme.colors.secondary }}>
-                Client Route
+                Client Route {result}
             </h1>
             <div className="image-slider-container">
                 <Slider {...settings}>
