@@ -1,3 +1,5 @@
+import { ThemeProvider } from "@/components/theme-provider";
+
 export const metadata = {
   title: {
     absolute: "",
@@ -10,9 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <ThemeProvider>
+        <body>
+          {children}
+        </body>
+      </ ThemeProvider>
     </html>
   );
 }
