@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/components/theme-provider";
+import './global.css'
 
 export const metadata = {
   title: {
