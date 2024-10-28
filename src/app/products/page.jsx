@@ -1,5 +1,10 @@
 const ProductsPage = async () => {
-    const response = await fetch("http://localhost:3001/products");
+    const detailsResponse = await fetch("http://localhost:3001/products/1");
+    const details = await detailsResponse.json();
+
+    const response = await fetch("http://localhost:3001/products", {
+        cache: "no-store"
+    });
     const products = await response.json();
 
     return (
@@ -12,7 +17,8 @@ const ProductsPage = async () => {
                     >
                         <h2 className="text-xl font-semibold">{product.title}</h2>
                         <p>{product.description}</p>
-                        <h2 className="text-lg font-medium">${product.price}</h2>
+                        <p className="text-lg font-medium">${product.price}</p>
+                        <p>{details.price}</p>
                     </li>
                 )
             }
